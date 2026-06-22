@@ -1,65 +1,104 @@
-# Against the Kitchen Floor — lyric fragment
+# Against The Kitchen Floor — Lyric Visualizer
 
-Una experiencia de lyric video surrealista inspirada en la estética de Will Wood,
-con papel animado, texturas vintage y recortes dibujados a mano.
+An animated lyric visualizer synchronized to the final section of **Against The Kitchen Floor**.
 
-Aplicación de escritorio en Python que reproduce el MP3 desde **03:35 (215 s)**
-hasta el final del archivo (**05:06.103**). Los versos aparecen en ventanas Tkinter
-sin bordes, como recortes de papel, mientras `pygame` reproduce el audio.
+The project combines music playback, animated lyric cards, vintage paper aesthetics, and cinematic transitions to create a visual storytelling experience inspired by the emotional progression of the song.
 
-## Preparación
+---
 
-Requiere Python 3.9 o posterior. El entorno `.venv` del proyecto ya quedó
-preparado; si necesitas recrearlo, usa estos comandos:
+## Features
 
-```bash
-cd "/Users/ioslabaulainclusiva/Desktop/ATKF"
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
+* MP3 synchronized playback
+* Timestamp-based lyric system
+* Animated lyric cards
+* Paper-themed visual design
+* Smooth transitions between verses
+* Configurable color palettes
+* Custom asset support
+* Easily editable lyrics and timing
+
+---
+
+## Project Structure
+
+```text
+assets/
+audio/
+data/
+src/
+
+audio/
+└── against_the_kitchen_floor.mp3
+
+data/
+└── lyrics.json
+
+src/
+└── main.py
 ```
 
-## Editar los versos
+---
 
-Abre `lyrics.json`. Cada `time` es relativo al inicio del fragmento, no al inicio
-de la canción: `0` equivale a 03:35, `4.2` equivale a 03:39.2, etc.
+## Lyrics Format
+
+Lyrics are loaded dynamically from a JSON file.
+
+Example:
 
 ```json
 [
-  { "time": 0, "text": "VERSO AQUI" },
-  { "time": 4.2, "text": "OTRO VERSO" }
+  {
+    "time": 0.0,
+    "text": "Example lyric"
+  }
 ]
 ```
 
-Los tiempos deben estar en orden. Los versos posteriores a la duración configurada
-(91.103 s para este MP3) se conservan en el archivo pero la app los ignora.
+All timestamps are relative to the selected starting point of the song.
 
-## Ejecutar
+---
 
-```bash
-python main.py --check
-python main.py
-```
+## Visual Style
 
-Pulsa `Esc` o `Q` para salir. Para probar sin pantalla completa:
+The visual experience focuses on:
 
-```bash
-python main.py --windowed
-```
+* Vintage paper textures
+* Soft lighting
+* Cinematic transitions
+* Layered composition
+* Animated typography
+* Emotional progression synchronized to the music
 
-## Personalizar
+The color palette is inspired by the warm tones and visual identity associated with Will Wood's work, particularly the aesthetic direction of *In Case I Make It*.
 
-- `config.json`: segundo inicial, duración, fades, solapamiento, pantalla completa
-  y toda la paleta.
-- `lyrics.json`: tiempos y textos.
-- `assets/paper_texture.png`: textura de fondo y tarjetas.
-- `assets/*.png`: sol, luna, rosa y marco. Todos son opcionales; si faltan, la
-  app sigue dibujando papel, grano, sombras y bordes con código.
+---
 
-El valor `random_seed` permite cambiar la distribución del grano y el carácter de
-las animaciones manteniendo un resultado reproducible.
+## Configuration
 
-Cada `time` inicia el primer término del verso; como el formato no incluye tiempos
-por palabra, las demás palabras se distribuyen automáticamente antes del verso
-siguiente. La animación usa el reloj de reproducción de `pygame` para no acumular
-desfase respecto al audio.
+The project can be customized through configuration files:
+
+* Colors
+* Animation speed
+* Card duration
+* Font selection
+* Transition styles
+* Asset folders
+
+---
+
+## Future Features
+
+* Multiple visual themes
+* Camera movement system
+* Particle effects
+* Automatic lyric synchronization
+* Full-song support
+* Export to video
+
+---
+
+## Disclaimer
+
+This project is a fan-made visualizer created for educational and artistic purposes.
+
+Music rights belong to their respective owners.
