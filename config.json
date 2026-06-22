@@ -1,0 +1,23 @@
+{
+  "audio_file": "against_the_kitchen_floor.mp3",
+  "lyrics_file": "lyrics.json",
+  "assets_dir": "assets",
+  "audio_start_seconds": 215,
+  "visual_duration_seconds": 91.103,
+  "fade_seconds": 0.55,
+  "overlap_seconds": 0.25,
+  "fullscreen": true,
+  "close_when_finished": true,
+  "random_seed": 1945,
+  "palette": {
+    "ink": "#201a17",
+    "soft_black": "#110f0e",
+    "paper": "#e7d1aa",
+    "cream": "#f1e3c7",
+    "gold": "#b7863c",
+    "coffee": "#5a3829",
+    "wine": "#4d1720",
+    "burnt_red": "#8e3828",
+    "teal": "#496d67"
+  }
+}
